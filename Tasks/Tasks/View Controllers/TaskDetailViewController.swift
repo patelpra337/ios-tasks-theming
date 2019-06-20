@@ -12,7 +12,7 @@ class TaskDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateViews()
     }
 
@@ -35,6 +35,18 @@ class TaskDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func setupAppearances() {
+        self.nameTextField.backgroundColor = AppearanceHelper.backgroundGray
+        self.nameTextField.textColor = .white
+        self.nameTextField.layer.borderColor = UIColor.white.cgColor
+        self.nameTextField.layer.borderWidth = 0.5
+        self.nameTextField.layer.cornerRadius = 8.0
+        self.nameTextField.font = AppearanceHelper.typerighterFont(with: .body, pointSize: 28)
+        self.nameTextField.keyboardAppearance = .dark
+        
+        self.view.backgroundColor = AppearanceHelper.backgroundGray
+        
+    }
     private func updateViews() {
         guard isViewLoaded else { return }
                 
